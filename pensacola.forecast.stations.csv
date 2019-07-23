@@ -1,0 +1,28 @@
+station.id,station.name,station.type,station.url,station.longitude,station.latitude,station.elevation,elevation.units,station.timezone
+KPNS,Pensacola - Pensacola International Airport,wx:ObservationStation,https://api.weather.gov/stations/KPNS,-87.18694,30.47806,35.9664,unit:m,America/Chicago
+KNPA,Pensacola Naval Air Station,wx:ObservationStation,https://api.weather.gov/stations/KNPA,-87.32326,30.35641,4.8768,unit:m,America/Chicago
+KNSE,Milton - Whiting Field Naval Air Station North,wx:ObservationStation,https://api.weather.gov/stations/KNSE,-87.02192,30.72848,56.083200000000005,unit:m,America/Chicago
+KVPS,Valparaiso / Eglin Air Force Base,wx:ObservationStation,https://api.weather.gov/stations/KVPS,-86.51667,30.48333,25.908,unit:m,America/Chicago
+KDTS,"Destin, Destin-Ft. Walton Beach Airport",wx:ObservationStation,https://api.weather.gov/stations/KDTS,-86.4675,30.39333,6.096,unit:m,America/Chicago
+KBFM,"Mobile, Mobile Downtown Airport",wx:ObservationStation,https://api.weather.gov/stations/KBFM,-88.0633299,30.61389,7.010400000000001,unit:m,America/Chicago
+KCEW,"Crestview, Sikes Airport",wx:ObservationStation,https://api.weather.gov/stations/KCEW,-86.52,30.77222,64.92240000000001,unit:m,America/Chicago
+KMOB,"Mobile, Mobile Regional Airport",wx:ObservationStation,https://api.weather.gov/stations/KMOB,-88.24556,30.68833,66.1416,unit:m,America/Chicago
+KGZH,"Evergreen, Middleton Field",wx:ObservationStation,https://api.weather.gov/stations/KGZH,-87.04806,31.41889,78.0288,unit:m,America/Chicago
+KPQL,Moss Point - Trent Lott International Airport,wx:ObservationStation,https://api.weather.gov/stations/KPQL,-88.53155,30.46305,4.8768,unit:m,America/Chicago
+KECP,Panama City - Northwest Florida Beaches International Airport,wx:ObservationStation,https://api.weather.gov/stations/KECP,-85.7955999,30.3582,20.7264,unit:m,America/Chicago
+KPAM,Tyndall Air Force Base,wx:ObservationStation,https://api.weather.gov/stations/KPAM,-85.58333,30.06667,4.8768,unit:m,America/Chicago
+KPRN,Mac Crenshaw Mememorial Airport,wx:ObservationStation,https://api.weather.gov/stations/KPRN,-86.6107,31.8457,137.16,unit:m,America/Chicago
+KGPT,Gulfport - Gulfport-Biloxi International Airport,wx:ObservationStation,https://api.weather.gov/stations/KGPT,-89.08083,30.41194,7.9248,unit:m,America/Chicago
+KTOI,"Troy, Troy Municipal Airport",wx:ObservationStation,https://api.weather.gov/stations/KTOI,-86.01222,31.86056,121.0056,unit:m,America/Chicago
+KDHN,"Dothan, Dothan Regional Airport",wx:ObservationStation,https://api.weather.gov/stations/KDHN,-85.44972,31.32139,121.92,unit:m,America/Chicago
+KMAI,"Marianna, Marianna Municipal Airport",wx:ObservationStation,https://api.weather.gov/stations/KMAI,-85.18361,30.83667,34.1376,unit:m,America/Chicago
+KHBG,"Hattiesburg, Bobby L Chain Municipal Airport",wx:ObservationStation,https://api.weather.gov/stations/KHBG,-89.25613,31.26945,44.805600000000005,unit:m,America/Chicago
+KMGM,"Montgomery, Dannelly Field",wx:ObservationStation,https://api.weather.gov/stations/KMGM,-86.40611,32.30028,67.056,unit:m,America/Chicago
+KPIB,"Hattiesburg/Laurel, Hattiesburg-Laurel Regional Airport",wx:ObservationStation,https://api.weather.gov/stations/KPIB,-89.33333,31.46667,91.1352,unit:m,America/Chicago
+KASD,"Slidell, Slidell Airport",wx:ObservationStation,https://api.weather.gov/stations/KASD,-89.82194,30.34306,9.144,unit:m,America/Chicago
+KMEI,"Meridian, Key Field",wx:ObservationStation,https://api.weather.gov/stations/KMEI,-88.74778,32.33806,89.91600000000001,unit:m,America/Chicago
+KMSY,"New Orleans, New Orleans International Airport",wx:ObservationStation,https://api.weather.gov/stations/KMSY,-90.2508299,29.99278,0.9144000000000001,unit:m,America/Chicago
+KAUO,Auburn-Opelika Airport,wx:ObservationStation,https://api.weather.gov/stations/KAUO,-85.43333,32.61667,235.9152,unit:m,America/Chicago
+KHDC,"Hammond, Hammond Municipal Airport",wx:ObservationStation,https://api.weather.gov/stations/KHDC,-90.4175,30.52083,13.1064,unit:m,America/Chicago
+KJAN,"Jackson, Jackson International Airport",wx:ObservationStation,https://api.weather.gov/stations/KJAN,-90.0775,32.3197199,104.8512,unit:m,America/Chicago
+KHKS,"Jackson, Hawkins Field Airport",wx:ObservationStation,https://api.weather.gov/stations/KHKS,-90.2225,32.33472,103.9368,unit:m,America/Chicago
