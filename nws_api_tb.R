@@ -7,7 +7,6 @@
 #27.9947144,-82.59471
 #get metadata info for TB area
 tampa.meta.info <- weather.meta(27.9947144, -82.59471)
-tampa.forecast.zone <- forecast.zone(tampa.meta.info)
 tampa.meta.info %>% write_csv("tampa.meta.csv")
 
 #get forecast
@@ -29,7 +28,7 @@ tampa.gridpoints.forecast$periods %>% write_csv("tampa.hourly.gridpoint.periods.
 tampa.forecast.stations <- forecast.stations(tampa.meta.info)
 
 #latest observations at each of those stations
-tampa.current.conditions <- current.conditions(tb.forecast.stations$stations)
+tampa.current.conditions <- current.conditions(tampa.forecast.stations$stations)
 
 tampa.current.conditions %>% write_csv("tampa.current.conditions.csv")
 

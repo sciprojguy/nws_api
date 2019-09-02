@@ -25,7 +25,6 @@ m.pensacola <- leaflet(data = augmented.conditions) %>%
   addTiles() %>%
   addPolygons(data = pensacola.area, lng = ~area.longitudes, lat = ~area.latitudes) %>%
   addMarkers( lng = ~longitudes, lat = ~latitudes, 
-              label = ~station.name, 
               popup = ~popup.html, 
               icon = weatherStationIcon) %>%
   addMarkers( data = pensacola.forecast$meta, lng = ~forecast.longitude, lat = ~forecast.latitude, label = "pensacola, FL")

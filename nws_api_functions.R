@@ -19,8 +19,6 @@ weather.meta <- function(lat, lon) {
   
   #parse the content body and get back list -> list -> (turtles all the way down)
   body <- content(resp, "parsed", encoding = "UTF-8", type = "application/json")
-  body.json <- content(resp, "text", encoding = "UTF-8", type = "application/json")
-  print(paste("JSON: ", body.json))
   coordinates <- unlist(body$geometry$coordinates)
   
   #build metadata tibble so we can write it out to a CSV file
@@ -65,12 +63,7 @@ forecast.periodic <- function(meta) {
   }
   
   body <- content(resp, "parsed", encoding = "UTF-8", type = "application/json")
-  json.body <- content(resp, "text", encoding = "UTF-8", type = "application/json")
-  print(json.body)
-  #capture this for outlining the forecast area on a map.  this goes in its own tibble - "area"
-  #that gets written out as <city>.forecast.area or <city>.hourly.forecast.area.
-  #body$geometry$geometries[1]$coordinates is lat/lon point
-  
+
   geom1 <- body$geometry$geometries[1]
   geom1.unlist <- unlist(geom1)
 
@@ -125,8 +118,8 @@ forecast.periodic <- function(meta) {
     }
     period.temperature[period$number] = period$temperature
     period.temperature.unit[period$number] = period$temperatureUnit
-    period.wind.speed[period$number] = period$windSpeed
-    period.wind.direction[period$number] = period$windDirection
+    period.wind.speed[period$number] = ifelse(is.null(period$windSpeed), NA, period$windSpeed)
+    period.wind.direction[period$number] = ifelse(is.null(period$windDirection), NA, period$windDirection)
     period.short.forecast[period$number] = period$shortForecast
     period.detailed.forecast[period$number] = period$detailedForecast
   }
@@ -194,9 +187,7 @@ forecast.hourly <- function(meta) {
   }
   print(meta$forecast.hourly.url)
   body <- content(resp, "parsed", encoding = "UTF-8", type = "application/json")
-  json.body <- content(resp, "text", encoding = "UTF-8", type = "application/json")
-  print(json.body)
-  
+
   area.latitudes <- vector(mode = "numeric")
   area.longitudes <- vector(mode = "numeric")
   geom2 <- body$geometry$geometries[2]
@@ -242,8 +233,8 @@ forecast.hourly <- function(meta) {
     }
     period.temperature[period$number] = period$temperature
     period.temperature.unit[period$number] = period$temperatureUnit
-    period.wind.speed[period$number] = period$windSpeed
-    period.wind.direction[period$number] = period$windDirection
+    period.wind.speed[period$number] = ifelse(is.null(period$windSpeed), NA, period$windSpeed)
+    period.wind.direction[period$number] = ifelse(is.null(period$windDirection), NA, period$windDirection)
     period.short.forecast[period$number] = period$shortForecast
     period.detailed.forecast[period$number] = period$detailedForecast
   }
@@ -308,9 +299,7 @@ forecast.gridpoints <- function(meta) {
   }
   
   body <- content(resp, "parsed", encoding = "UTF-8", type = "application/json")
-  json.body <- content(resp, "text", encoding = "UTF-8", type = "application/json")
-  print(json.body)
-  
+
   numeric.times <- unlist(parse.valid.times(body$properties$validTime))
   class(numeric.times) <- "POSIXct"
   hours.in.forecast <- as.numeric((numeric.times[2] - numeric.times[1])/3600)
@@ -434,8 +423,6 @@ forecast.stations <- function(meta) {
   if(200 == status_cd) {
     row <- 1
     body <- content(resp, "parsed", encoding = "UTF-8", type = "application/json")
-    json.body <- content(resp, "text", encoding = "UTF-8", type = "application/json")
-    print(json.body)
     for( feature in body$features ) {
       
       url <- feature$id
@@ -558,9 +545,7 @@ current.conditions <- function(stations) {
     resp <- httr::GET(conditions.url)
     status_cd <- status_code(resp)
     conditions <- content(resp, "parsed", encoding = "UTF-8", type = "application/json")
-    json.body <- content(resp, "text", encoding = "UTF-8", type = "application/json")
-    print(json.body)
-    
+
     station.ids[row] <- unlist(stations[row, "station.id"])
     latitudes[row] <- unlist(stations[row, "station.latitude"])
     longitudes[row] <- unlist(stations[row, "station.longitude"])
@@ -902,25 +887,4 @@ parse.valid.times <- function(valid.times) {
   end.instant <- start.instant + time.duration
   list(start.time = start.instant, end.time = end.instant)
 }
-
-##########################################################################################
-## TODO:
-##
-## TODO: add a geocoding function to get coords for city/state
-#### https://datascienceplus.com/osm-nominatim-with-r-getting-locations-geo-coordinates-by-its-address/
-##
-## TODO: work out how to save forecasts, grid forecasts and current conditions into a "tb.weather.*" 
-##   set of tibbles and save it to disk, matched by date/time.
-##
-## TODO: add a function to do trial/error - fetch meta.info and
-##   check for gridX/gridY of existing; don't get the rest of the data
-##   unless it's a new gridX/gridY or it needs updating.
-##   to support this, add a vector with gridX:gridY key (rowname) and last.updated as value
-##   so we can see (a) if we need to get new data or (b) we need to update data
-##
-## TODO: add functions to extract single layers from grid and current conditions
-##
-## TODO: add functions to save JSON in case of bad bar wifi
-##
-##########################################################################################
 

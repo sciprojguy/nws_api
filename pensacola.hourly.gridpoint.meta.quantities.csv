@@ -1,2 +1,2 @@
 update.time,start.time,end.time,gridId,gridX,gridY,forecast.office,temperature.units,prob.precip.units,qty.precip.units
-2019-07-23T08:24:57+00:00,1563847200,1564534800,MOB,81,57,https://api.weather.gov/offices/MOB,unit:degC,unit:percent,unit:mm
+2019-09-02T08:32:17+00:00,1567389600,1568077200,MOB,81,57,https://api.weather.gov/offices/MOB,unit:degC,unit:percent,unit:mm
