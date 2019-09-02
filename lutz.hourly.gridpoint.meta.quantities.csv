@@ -1,2 +1,0 @@
-update.time,start.time,end.time,gridId,gridX,gridY,forecast.office,temperature.units,prob.precip.units,qty.precip.units
-2019-09-02T12:03:53+00:00,1567404000,1568077200,TBW,68,105,https://api.weather.gov/offices/TBW,unit:degC,unit:percent,unit:mm

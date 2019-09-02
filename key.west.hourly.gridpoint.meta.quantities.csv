@@ -1,2 +1,0 @@
-update.time,start.time,end.time,gridId,gridX,gridY,forecast.office,temperature.units,prob.precip.units,qty.precip.units
-2019-09-02T13:15:50+00:00,1567407600,1568034000,KEY,60,47,https://api.weather.gov/offices/KEY,unit:degC,unit:percent,unit:mm

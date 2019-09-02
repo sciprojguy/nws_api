@@ -1,2 +1,0 @@
-forecast.longitude,forecast.latitude,last.updated,units,generator,generated,update.time,valid.start,valid.end,elevation,unit.code,num.periods
--81.796823,24.5558005,2019-09-02T13:15:50+00:00,us,BaselineForecastGenerator,2019-09-02T14:20:45+00:00,2019-09-02T13:15:50+00:00,2019-09-02T07:00:00Z,2019-09-09T13:00:00Z,0.9144000000000001,unit:m,14
